@@ -12,6 +12,7 @@ urlpatterns = [
     path('mobile/employeedetail', csrf_exempt(views.employeedetail), name='employeedetail'),
     path('mobile/datetoday', csrf_exempt(views.DateToday), name='DateToday'),
     path('mobile/samplePage', csrf_exempt(views.samplePage), name='samplePage'),
+    path('mobile/changepass', csrf_exempt(views.changePass), name='changepass'),
 ]
 
 #assignedwork  creatework

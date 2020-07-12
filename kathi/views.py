@@ -148,14 +148,16 @@ def employeedetail(request):
     workevent.save()
     result={'status':"success",'error':"None"}        
     return JsonResponse(result)
-def DateToday(request):
+def changePass(request):
     request_values = json.loads(request.body.decode('utf-8'))
     print(request_values)
     eid =request_values['empid']
-    event = models.Activity(empid = eid,CompletedDate = date.today())
+    pass = request_values['password']
+    event = models.login(empid = eid,password = pass)
     event.save()
     result={'status':"success",'error':"None"}        
     return JsonResponse(result)
 
 def samplePage(request):
     return render(request,'Sample1.html')
+
