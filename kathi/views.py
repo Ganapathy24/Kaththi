@@ -152,8 +152,8 @@ def changePass(request):
     request_values = json.loads(request.body.decode('utf-8'))
     print(request_values)
     eid =request_values['empid']
-    pass = request_values['password']
-    event = models.login(empid = eid,password = pass)
+    password = request_values['password']
+    event = models.login(empid = eid,password = password)
     event.save()
     result={'status':"success",'error':"None"}        
     return JsonResponse(result)
